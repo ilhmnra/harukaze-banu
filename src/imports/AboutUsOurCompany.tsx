@@ -64,7 +64,13 @@ const IMG_FOOD_PROCESSING = "https://images.unsplash.com/photo-1617448570646-652
 // Reusable Animation Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.6
+    } 
+  },
 };
 
 const staggerContainer = {
@@ -680,7 +686,7 @@ export default function AboutUsOurCompany() {
 
       <main>
         {/* 1. Hero Section */}
-        <section className="relative min-h-screen flex flex-col justify-center bg-white overflow-hidden pt-28 pb-12">
+        <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-12" style={{ backgroundColor: '#a3d7ff' }}>
            {/* Subtle Grain Texture Background */}
            <div className="absolute inset-0 pointer-events-none opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
@@ -704,6 +710,14 @@ export default function AboutUsOurCompany() {
                   className="absolute bottom-[10%] left-[10%] w-[300px] h-[300px] rounded-full bg-cyan-100/50 blur-[50px]"
                />
            </div>
+
+           {/* Bottom Gradient Blend to next section */}
+           <div 
+              className="absolute bottom-0 left-0 right-0 h-48 md:h-64 lg:h-80 pointer-events-none z-[5]"
+              style={{ 
+                background: 'linear-gradient(to bottom, rgba(189, 226, 255, 0) 0%, rgba(189, 226, 255, 0.2) 30%, rgba(189, 226, 255, 0.5) 60%, rgba(189, 226, 255, 0.8) 85%, #bde2ff 100%)'
+              }}
+           />
 
            <div className="container mx-auto px-4 md:px-8 relative z-10 flex flex-col h-full justify-center">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
@@ -795,7 +809,7 @@ export default function AboutUsOurCompany() {
         </section>
 
         {/* 2. About (Vision & Mission) */}
-        <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+        <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#bde2ff' }}>
             {/* Decorative Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-20 -right-64 w-[600px] h-[600px] bg-blue-50/50 rounded-full blur-3xl opacity-60" />
@@ -878,7 +892,7 @@ export default function AboutUsOurCompany() {
                                         animate={{ opacity: 1, x: 0 }}
                                         exit={{ opacity: 0, x: 20 }}
                                         transition={{ duration: 0.3 }}
-                                        className="bg-gradient-to-br from-white to-blue-50/50 p-8 rounded-3xl border border-blue-100/50 shadow-sm relative overflow-hidden"
+                                        className="bg-white p-8 rounded-3xl border border-blue-100/50 shadow-sm relative overflow-hidden"
                                       >
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100/30 rounded-full blur-2xl -mr-10 -mt-10" />
                                         <h3 className="text-lg font-bold text-[#00A2FF] mb-4 flex items-center gap-2 relative z-10">
@@ -927,7 +941,7 @@ export default function AboutUsOurCompany() {
                             {/* Mobile/Tablet: Stacked View */}
                             <div className="block lg:hidden">
                                 <motion.div variants={fadeInUp} className="mb-12 relative">
-                                     <div className="bg-gradient-to-br from-white to-blue-50/50 p-8 rounded-3xl border border-blue-100/50 shadow-sm relative overflow-hidden">
+                                     <div className="bg-white p-8 rounded-3xl border border-blue-100/50 shadow-sm relative overflow-hidden">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100/30 rounded-full blur-2xl -mr-10 -mt-10" />
                                         
                                         <h3 className="text-lg font-bold text-[#00A2FF] mb-4 flex items-center gap-2 relative z-10">
@@ -971,9 +985,9 @@ export default function AboutUsOurCompany() {
         </section>
 
         {/* 3. Programs */}
-        <section id="programs" className="py-20 md:py-32 bg-[#f8fafc] relative">
-           <div className="absolute inset-0 opacity-[0.03]" 
-                style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} 
+        <section id="programs" className="py-20 md:py-32 relative" style={{ backgroundColor: '#a1d6ff' }}>
+           <div className="absolute inset-0 opacity-[0.15]" 
+                style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237cb7e5' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} 
            />
 
            <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -1036,7 +1050,8 @@ export default function AboutUsOurCompany() {
         </section>
 
         {/* 4. Eligibility & Requirements */}
-        <section className="py-20 md:py-32 bg-white container mx-auto px-4 md:px-8">
+        <section className="py-20 md:py-32" style={{ backgroundColor: '#bde2ff' }}>
+          <div className="container mx-auto px-4 md:px-8">
             <motion.div 
               className="max-w-4xl mx-auto"
               initial={{ opacity: 0, scale: 0.95 }}
@@ -1074,10 +1089,11 @@ export default function AboutUsOurCompany() {
                   </div>
                </div>
             </motion.div>
+          </div>
         </section>
 
         {/* 5. Schedule */}
-        <section id="schedule" className="py-20 md:py-32 bg-slate-50/50">
+        <section id="schedule" className="py-20 md:py-32" style={{ backgroundColor: '#bde2ff' }}>
            <div className="container mx-auto px-4 md:px-8">
               <div className="flex flex-col md:flex-row gap-16">
               <motion.div 
@@ -1099,7 +1115,10 @@ export default function AboutUsOurCompany() {
               <div className="md:w-2/3">
                  <div className="space-y-12 relative">
                     <motion.div 
-                      className="absolute left-5 top-2 bottom-2 w-0.5 bg-gradient-to-b from-blue-200 via-slate-200 to-transparent -translate-x-1/2"
+                      className="absolute left-5 top-2 bottom-2 w-0.5 -translate-x-1/2"
+                      style={{ 
+                        background: 'linear-gradient(to bottom, #00a4ff 0%, #00a4ff 50%, transparent 100%)'
+                      }}
                       initial={{ height: 0 }}
                       whileInView={{ height: "100%" }}
                       viewport={{ once: true }}
@@ -1205,7 +1224,8 @@ export default function AboutUsOurCompany() {
         </section>
 
         {/* 7. Facilities */}
-        <section className="py-20 md:py-32 bg-white container mx-auto px-4 md:px-8">
+        <section className="py-20 md:py-32" style={{ backgroundColor: '#bde2ff' }}>
+          <div className="container mx-auto px-4 md:px-8">
            <div className="flex flex-col md:flex-row gap-12 items-center">
               <motion.div 
                 className="md:w-1/2"
@@ -1254,10 +1274,11 @@ export default function AboutUsOurCompany() {
                  </motion.div>
               </div>
            </div>
+          </div>
         </section>
 
         {/* 8. Sectors */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20" style={{ backgroundColor: '#bde2ff' }}>
            <div className="container mx-auto px-4 md:px-8">
               <motion.div 
                 className="text-center mb-16"
@@ -1290,7 +1311,7 @@ export default function AboutUsOurCompany() {
                        <img loading="lazy" src={sector.img} alt={sector.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                        <div className="absolute bottom-0 left-0 p-6">
-                          <h3 className="text-white text-xl font-bold group-hover:text-blue-200 transition-colors">{sector.name}</h3>
+                          <h3 className="text-white text-xl font-bold group-hover:text-[#00a4ff] transition-colors">{sector.name}</h3>
                        </div>
                     </motion.div>
                  ))}
@@ -1299,7 +1320,8 @@ export default function AboutUsOurCompany() {
         </section>
 
         {/* 9. Application Flow & Form */}
-        <section id="apply" className="py-20 md:py-32 container mx-auto px-4 md:px-8">
+        <section id="apply" className="py-20 md:py-32" style={{ backgroundColor: '#bde2ff' }}>
+           <div className="container mx-auto px-4 md:px-8">
            <div className="bg-slate-900 rounded-[40px] text-white p-8 md:p-16 flex flex-col lg:flex-row gap-16 relative overflow-hidden shadow-2xl">
               <Blob className="bg-blue-600 w-96 h-96 top-0 right-0 mix-blend-overlay opacity-20" />
               
@@ -1354,10 +1376,12 @@ export default function AboutUsOurCompany() {
                  </form>
               </motion.div>
            </div>
+           </div>
         </section>
 
         {/* 10. FAQ */}
-        <section id="faq" className="py-20 bg-white container mx-auto px-4 md:px-8 max-w-3xl">
+        <section id="faq" className="py-20" style={{ backgroundColor: '#bde2ff' }}>
+           <div className="container mx-auto px-4 md:px-8 max-w-3xl">
            <motion.h2 
              className="text-3xl font-bold text-center mb-12"
              initial={{ opacity: 0 }}
@@ -1368,7 +1392,7 @@ export default function AboutUsOurCompany() {
            </motion.h2>
            <Accordion type="single" collapsible className="w-full">
               {c.faq.items.map((faq, i) => (
-                 <AccordionItem key={i} value={`item-${i}`} className="border-b-slate-100">
+                 <AccordionItem key={i} value={`item-${i}`} className="border-b last:border-b-0 [&]:border-b-[#849eb2]">
                     <AccordionTrigger className="text-lg font-medium text-left hover:text-[#00A2FF] transition-colors">{faq.q}</AccordionTrigger>
                     <AccordionContent className="text-slate-600 text-base leading-relaxed">
                        {faq.a}
@@ -1376,6 +1400,7 @@ export default function AboutUsOurCompany() {
                  </AccordionItem>
               ))}
            </Accordion>
+           </div>
         </section>
 
         {/* 11. Footer */}
