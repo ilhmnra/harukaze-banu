@@ -151,7 +151,7 @@ const slickCss = `
 export default function AboutUsOurCompany() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState<'vision' | 'mission'>('vision');
-  const [lang, setLang] = React.useState<'en' | 'id'>('en');
+  const [lang, setLang] = React.useState<'en' | 'id' | 'ja'>('id');
   
   // Form state
   const [formData, setFormData] = React.useState({
@@ -243,7 +243,7 @@ Mohon informasi lebih lanjut. Terima kasih!`;
          tabs: { vision: "Vision", mission: "Mission" },
          vision: {
              title: "Our Vision",
-             text: "To be a trusted training institution that brings a breath of change to Indonesia’s workforce — empowering young people to achieve economic independence and global competitiveness."
+             text: "To be a trusted training institution that brings a breath of change to Indonesia’s workforce. Empowering young people to achieve economic independence and global competitiveness."
          },
          mission: {
              title: "Our Mission",
@@ -316,31 +316,31 @@ Mohon informasi lebih lanjut. Terima kasih!`;
       },
       fees: {
          badge: "Affordable & Transparent",
-         title: "Start your path to Japan today",
-         sub: "Flexible payment plans with promotional discounts for Batch 1.",
+         title: "Start your journey to Japan today",
+         sub: "Flexible installment plans with financing options available!",
          plans: [
             { 
-               title: "Magang Program", subtitle: "3-Month Intensive", discount: "40% OFF",
-               items: [{l:"Registration",v:"IDR 500,000"}, {l:"Month 1",v:"IDR 5,000,000"}, {l:"Month 2",v:"IDR 2,500,000"}],
-               note: "Departure financing (IDR 20-30M) available for eligible candidates."
+               title: "Magang Program", subtitle: "3-Month Training", discount: "Batch 1",
+               items: [{l:"Booking (MCU)",v:"IDR 500,000"}, {l:"Month 1",v:"IDR 5,000,000"}, {l:"Month 2",v:"IDR 3,000,000"}, {l:"Month 3",v:"IDR 2,500,000"}],
+               note: "Total training fee IDR 10.5M (includes 3-month dorm, uniform & study materials). MCU from other cities gets IDR 350k cashback."
             },
             {
-               title: "TG / SSW Program", subtitle: "6-Month Intensive", discount: "40% OFF",
-               items: [{l:"Registration",v:"IDR 500,000"}, {l:"Month 1",v:"IDR 5,000,000"}, {l:"Month 2",v:"IDR 3,000,000"}, {l:"Month 3",v:"IDR 1,500,000"}],
-               note: "Referral Cashback: Earn IDR 500k when a friend registers!"
+               title: "TG / SSW Program", subtitle: "6-Month Training", discount: "Batch 1",
+               items: [{l:"Booking (MCU)",v:"IDR 500,000"}, {l:"Month 1",v:"IDR 5,000,000"}, {l:"Month 2",v:"IDR 3,000,000"}, {l:"Month 3",v:"IDR 1,500,000"}],
+               note: "Departure costs IDR 35-40M (visa, final MCU, tickets, etc). Financing available ± IDR 25M."
             }
          ],
-         disclaimer: "All prices are promotional and subject to terms. Contact admissions for full schedule and scholarship details."
+         disclaimer: "After job placement, prepare ± IDR 15M for Japan paperwork. Remaining can use financing. Contact us for details."
       },
       facilities: {
          label: "Facilities & Advantages",
-         title: "Why train with Harukaze?",
+         title: "Why choose Harukaze?",
          items: [
-            "Air-conditioned classrooms and dormitories",
+            "Air-conditioned classrooms and dormitories during training",
             "Certified instructors and native speaker sessions",
-            "Complete N5 / N4 modules and practice materials",
-            "Document translation support (Japanese documents)",
-            "Assistance with departure loan & Japan-side living arrangements"
+            "Complete N5 / N4 modules, uniform & study materials",
+            "Document translation support for Japanese documents",
+            "Departure financing available ± IDR 25 million"
          ],
          highlight: "Full Support until Departure"
       },
@@ -372,16 +372,17 @@ Mohon informasi lebih lanjut. Terima kasih!`;
       faq: {
          title: "Frequently Asked Questions",
          items: [
-             { q: "What language level do I need?", a: "For internship (magang) we expect minimum N5; for Tokutei/SSW N4 / JFT A2 and passing the relevant skill exam." },
-             { q: "Do I need prior work experience?", a: "For the internship path — no. For TG/SSW you must pass required skill tests." },
-             { q: "Can Harukaze help with departure costs?", a: "Yes — Harukaze offers or arranges short-term financing/loans (approx. IDR 20–30 million) for eligible candidates." },
-             { q: "Where is Harukaze located?", a: "Jl. Malaka gg. Masjid Almuctar, Munjul, Cipayung, East Jakarta, DKI Jakarta 13850." }
+             { q: "What is the total cost for Magang program?", a: "Total training fee is IDR 10.5M (3-month installment). Includes 3-month dorm, LPK uniform & study materials. Departure costs IDR 35-40M, with financing available ± IDR 25M." },
+             { q: "Do I need prior work experience?", a: "For Magang program — no experience needed. For TG/SSW you must pass the required skill tests." },
+             { q: "What is the payment scheme?", a: "Booking fee IDR 500K (for MCU). Installments: Month 1 = IDR 5M, Month 2 = IDR 3M, Month 3 = IDR 2.5M. After job placement, prepare ± IDR 15M for paperwork." },
+             { q: "Is financing available?", a: "Yes! Departure financing available ± IDR 25M for candidates who have secured job placement." },
+             { q: "Where is Harukaze located?", a: "Jl. Malaka Gg. Masjid Almuctar, Kelurahan Munjul, Kecamatan Cipayung, East Jakarta 13850." }
          ]
       },
       footer: {
-         ready: "Ready to start?",
-         desc: "Harukaze Indonesia — a breath of change for your future. Transform your life through a professional career in Japan. Arigatou gozaimasu.",
-         chat: "Chat on WhatsApp",
+         ready: "Ready to start your journey?",
+         desc: "Harukaze Indonesia — a breath of change for your future. Make your dream of working in Japan come true with us. Arigatou gozaimasu!",
+         chat: "Chat WhatsApp",
          contact: "Contact Us",
          copy: "© 2026 Harukaze Indonesia. All rights reserved.",
          links: ["Privacy Policy", "Terms of Service"]
@@ -395,167 +396,340 @@ Mohon informasi lebih lanjut. Terima kasih!`;
         { name: 'FAQ', id: 'faq' }
       ],
       applyButton: 'Daftar Sekarang',
-      mobileMenuTitle: 'Menu Mobile',
-      mobileMenuDesc: "Navigasi halaman Harukaze",
+      mobileMenuTitle: 'Menu',
+      mobileMenuDesc: "Jelajahi halaman Harukaze",
       hero: {
          headlineStart: "Angin",
          headlineMiddle: "Perubahan",
-         headlineEnd: "untuk Masa Depan.",
-         desc: "Pelatihan bahasa Jepang intensif, budaya, dan dukungan penempatan yang membuka jalan jelas dari pelatihan hingga kerja di Jepang.",
-         cta: "Jelajahi Program",
-         placementTitle: "Peluang Penempatan Di:",
+         headlineEnd: "untuk Masa Depanmu.",
+         desc: "Pelatihan bahasa Jepang intensif, pembekalan budaya, dan pendampingan penuh hingga bekerja di Jepang. Wujudkan impianmu bersama kami!",
+         cta: "Lihat Program",
+         placementTitle: "Peluang Kerja di Bidang:",
          placements: ["Pertanian", "Restoran", "Peternakan", "Keperawatan", "Pengolahan Makanan", "Manufaktur"]
       },
       about: {
          label: "Tentang Kami",
-         headlinePrefix: "Membawa nafas perubahan bagi",
-         headlineHighlight: "tenaga kerja Indonesia",
-         imageQuote: "\"Memberdayakan pemuda untuk mencapai daya saing global.\"",
+         headlinePrefix: "Membawa angin perubahan bagi",
+         headlineHighlight: "generasi muda Indonesia",
+         imageQuote: "\"Memberdayakan pemuda Indonesia untuk bersaing di kancah global.\"",
          tabs: { vision: "Visi", mission: "Misi" },
          vision: {
              title: "Visi Kami",
-             text: "Menjadi lembaga pelatihan terpercaya yang membawa nafas perubahan bagi tenaga kerja Indonesia — memberdayakan pemuda untuk mencapai kemandirian ekonomi dan daya saing global."
+             text: "Menjadi lembaga pelatihan terpercaya yang membawa angin perubahan bagi tenaga kerja Indonesia. Memberdayakan generasi muda untuk meraih kemandirian ekonomi dan daya saing global."
          },
          mission: {
              title: "Misi Kami",
              items: [
-                { title: "Pelatihan Berkualitas", desc: "Menyediakan pelatihan bahasa Jepang berkualitas yang dipadukan dengan persiapan budaya dan mental.", icon: BookOpen },
-                { title: "Kurangi Pengangguran", desc: "Mengurangi pengangguran dengan membuka peluang kerja terpercaya di Jepang.", icon: TrendingUp },
-                { title: "Dampak Komunitas", desc: "Mendorong kembalinya keterampilan, teknologi, dan modal untuk memperkuat komunitas di Indonesia.", icon: Users }
+                { title: "Pelatihan Berkualitas", desc: "Memberikan pelatihan bahasa Jepang berkualitas tinggi yang dipadukan dengan pembekalan budaya dan mental.", icon: BookOpen },
+                { title: "Kurangi Pengangguran", desc: "Membuka peluang kerja terpercaya di Jepang untuk mengurangi angka pengangguran.", icon: TrendingUp },
+                { title: "Dampak Positif", desc: "Mendorong transfer keterampilan, teknologi, dan modal untuk membangun komunitas di Indonesia.", icon: Users }
              ]
          }
       },
       programs: {
          label: "Program Kami",
-         headline: "Pilih Jalur Anda ke Jepang",
-         sub: "Kami menawarkan jalur terstruktur yang disesuaikan dengan usia, keterampilan, dan tujuan karir Anda.",
+         headline: "Pilih Jalurmu ke Jepang",
+         sub: "Kami menyediakan program terstruktur yang disesuaikan dengan usia, kemampuan, dan tujuan karirmu.",
          cards: [
            {
               icon: Users,
               title: "Program Magang / Ginou Jisshu",
               label: "Program Magang",
-              whoFor: "Untuk Siapa",
-              whoForDesc: "Usia 18–26. Min N5. Ideal untuk lulusan baru. Tidak perlu pengalaman.",
-              features: "Fitur Utama",
-              featuresDesc: "Pelatihan N5 3 bulan. Asrama disediakan mitra. Latihan wawancara terfokus.",
-              footer: "Rute tercepat untuk pemula"
+              whoFor: "Cocok Untuk",
+              whoForDesc: "Usia 18–26 tahun. Minimal N5. Cocok untuk fresh graduate. Tanpa pengalaman kerja.",
+              features: "Keunggulan",
+              featuresDesc: "Pelatihan 3 bulan (N5). Asrama gratis selama pelatihan. Baju LPK & buku panduan.",
+              footer: "Jalur tercepat untuk pemula"
            },
            {
               icon: Briefcase,
               title: "Tokutei Ginou (TG)",
-              label: "Pekerja Berketerampilan Khusus",
-              whoFor: "Untuk Siapa",
-              whoForDesc: "Usia 18–33. Wajib N4 / JFT A2. Harus lulus ujian keterampilan SSW.",
-              features: "Fitur Utama",
-              featuresDesc: "Pelatihan 6 bulan. Gaji lebih tinggi. Potensi visa 5–10 tahun & dukungan keluarga.",
-              footer: "Terbaik untuk karir jangka panjang"
+              label: "Pekerja Terampil Khusus",
+              whoFor: "Cocok Untuk",
+              whoForDesc: "Usia 18–33 tahun. Wajib N4 / JFT A2. Harus lulus ujian keterampilan SSW.",
+              features: "Keunggulan",
+              featuresDesc: "Pelatihan 6 bulan. Gaji lebih tinggi. Potensi visa 5–10 tahun & bisa membawa keluarga.",
+              footer: "Pilihan terbaik untuk karir jangka panjang"
            },
            {
               icon: FileText,
               title: "Jalur Ujian SSW",
               label: "Persiapan Ujian",
-              whoFor: "Untuk Siapa",
-              whoForDesc: "Kandidat yang bertujuan lulus ujian teknis & bahasa SSW untuk sektor tertentu.",
-              features: "Fitur Utama",
-              featuresDesc: "Penekanan pada kesiapan ujian, dokumentasi, dan pencocokan kerja.",
+              whoFor: "Cocok Untuk",
+              whoForDesc: "Kandidat yang ingin lulus ujian teknis & bahasa SSW untuk sektor tertentu.",
+              features: "Keunggulan",
+              featuresDesc: "Fokus persiapan ujian, pendampingan dokumen, dan penempatan kerja.",
               footer: "Fokus pada sertifikasi"
            }
          ]
       },
       eligibility: {
-         title: "Daftar Kelayakan",
-         sub: "Pastikan Anda memenuhi persyaratan dasar sebelum mendaftar.",
+         title: "Syarat Pendaftaran",
+         sub: "Pastikan kamu memenuhi persyaratan dasar sebelum mendaftar.",
          items: [
-            { label: "Usia", value: "18–26 (Magang) atau hingga 33 (TG/SSW)" },
-            { label: "Bahasa", value: "Min. N5 (Magang) / N4 atau JFT A2 (TG)" },
-            { label: "Kesehatan", value: "Pemeriksaan fisik & medis ketat (MCU)" },
-            { label: "Keahlian", value: "Tidak ada untuk Magang; Ujian skill untuk SSW/TG" }
+            { label: "Usia", value: "18–26 tahun (Magang) atau hingga 33 tahun (TG/SSW)" },
+            { label: "Bahasa", value: "Minimal N5 (Magang) / N4 atau JFT A2 (TG)" },
+            { label: "Kesehatan", value: "Lolos pemeriksaan kesehatan (MCU)" },
+            { label: "Keahlian", value: "Tidak diperlukan untuk Magang; Ujian skill untuk SSW/TG" }
          ]
       },
       schedule: {
-         label: "Lini Masa",
-         title: "Jadwal Gelombang 1",
-         desc: "Ikuti langkah demi langkah kami yang jelas dari pendaftaran hingga keberangkatan. Kami memandu Anda melalui setiap pencapaian.",
-         button: "Unduh PDF Brosur",
+         label: "Timeline",
+         title: "Jadwal Batch 1",
+         desc: "Ikuti tahapan yang jelas dari pendaftaran hingga keberangkatan. Kami mendampingimu di setiap langkah.",
+         button: "Unduh Brosur PDF",
          steps: [
-            { title: "Pendaftaran & Pra-seleksi", date: "~15 Des 2025 — 20 Des 2025", desc: "Penerimaan aplikasi, cek dokumen, seleksi kelayakan, biaya pendaftaran." },
-            { title: "MCU & Psikotes", date: "21 Des 2025 — 30 Des 2025", desc: "Cek medis lengkap (lokal) dan psikotes online via Zoom." },
-            { title: "Periode Pelatihan", date: "Mulai 3 Jan 2026", desc: "3 Bulan untuk Magang (N5). 6 Bulan untuk TG/SSW (N4). Pelajaran harian & budaya." },
-            { title: "Wawancara & Matching", date: "Akhir Des 2025 — Jan 2026", desc: "Wawancara dengan mitra pemberi kerja Jepang selama pelatihan." },
-            { title: "Penempatan & Keberangkatan", date: "Berkelanjutan setelah penempatan", desc: "Pengurusan visa, pembiayaan opsional, orientasi pra-keberangkatan, dan penerbangan." }
+            { title: "Pendaftaran & Seleksi Awal", date: "~15 Des 2025 — 20 Des 2025", desc: "Pengisian formulir, pengecekan dokumen, seleksi kelayakan, dan pembayaran booking." },
+            { title: "MCU & Psikotes", date: "21 Des 2025 — 30 Des 2025", desc: "Pemeriksaan kesehatan lengkap dan psikotes online via Zoom." },
+            { title: "Periode Pelatihan", date: "Mulai 3 Jan 2026", desc: "3 bulan untuk Magang (N5). 6 bulan untuk TG/SSW (N4). Pembelajaran harian & budaya Jepang." },
+            { title: "Wawancara & Penempatan", date: "Selama Pelatihan", desc: "Wawancara dengan perusahaan mitra Jepang selama masa pelatihan." },
+            { title: "Keberangkatan ke Jepang", date: "Setelah penempatan", desc: "Pengurusan visa, MCU akhir, orientasi pra-keberangkatan, dan penerbangan." }
          ]
       },
       fees: {
-         badge: "Terjangkau & Transparan",
-         title: "Mulai jalan Anda ke Jepang hari ini",
-         sub: "Rencana pembayaran fleksibel dengan diskon promosi untuk Gelombang 1.",
+         badge: "Transparan & Terjangkau",
+         title: "Mulai perjalananmu ke Jepang sekarang",
+         sub: "Skema pembayaran fleksibel dengan cicilan ringan. Dana talang tersedia!",
          plans: [
             { 
-               title: "Program Magang", subtitle: "Intensif 3 Bulan", discount: "Diskon 40%",
-               items: [{l:"Pendaftaran",v:"IDR 500.000"}, {l:"Bulan 1",v:"IDR 5.000.000"}, {l:"Bulan 2",v:"IDR 2.500.000"}],
-               note: "Pembiayaan keberangkatan (IDR 20-30jt) tersedia untuk kandidat yang memenuhi syarat."
+               title: "Program Magang", subtitle: "Pelatihan 3 Bulan", discount: "Batch 1",
+               items: [{l:"Booking Awal (MCU)",v:"Rp 500.000"}, {l:"Bulan 1",v:"Rp 5.000.000"}, {l:"Bulan 2",v:"Rp 3.000.000"}, {l:"Bulan 3",v:"Rp 2.500.000"}],
+               note: "Total biaya pendidikan Rp 10.500.000 (sudah termasuk asrama 3 bulan, baju LPK & buku panduan). MCU dari daerah dapat cashback Rp 350.000."
             },
             {
-               title: "Program TG / SSW", subtitle: "Intensif 6 Bulan", discount: "Diskon 40%",
-               items: [{l:"Pendaftaran",v:"IDR 500.000"}, {l:"Bulan 1",v:"IDR 5.000.000"}, {l:"Bulan 2",v:"IDR 3.000.000"}, {l:"Bulan 3",v:"IDR 1.500.000"}],
-               note: "Cashback Referral: Dapatkan IDR 500rb saat teman mendaftar!"
+               title: "Program TG / SSW", subtitle: "Pelatihan 6 Bulan", discount: "Batch 1",
+               items: [{l:"Booking Awal (MCU)",v:"Rp 500.000"}, {l:"Bulan 1",v:"Rp 5.000.000"}, {l:"Bulan 2",v:"Rp 3.000.000"}, {l:"Bulan 3",v:"Rp 1.500.000"}],
+               note: "Biaya keberangkatan Rp 35-40 juta (visa, MCU akhir, tiket, dll). Dana talang tersedia ± Rp 25 juta."
             }
          ],
-         disclaimer: "Semua harga adalah promosi dan tunduk pada ketentuan. Hubungi penerimaan untuk jadwal lengkap dan detail beasiswa."
+         disclaimer: "Setelah dapat job, siapkan ± Rp 15 juta untuk pemberkasan ke Jepang. Sisanya bisa pakai dana talang. Hubungi admin untuk info lengkap."
       },
       facilities: {
          label: "Fasilitas & Keunggulan",
-         title: "Kenapa berlatih dengan Harukaze?",
+         title: "Kenapa pilih Harukaze?",
          items: [
-            "Ruang kelas dan asrama ber-AC",
-            "Instruktur bersertifikat dan sesi penutur asli",
-            "Modul N5 / N4 lengkap dan materi latihan",
-            "Dukungan terjemahan dokumen (Dokumen Jepang)",
-            "Bantuan pinjaman keberangkatan & pengaturan tempat tinggal di Jepang"
+            "Ruang kelas dan asrama ber-AC selama pelatihan",
+            "Instruktur bersertifikat dan sesi bersama native speaker",
+            "Modul N5 / N4 lengkap, baju LPK & buku panduan",
+            "Bantuan penerjemahan dokumen ke bahasa Jepang",
+            "Dana talang keberangkatan tersedia ± Rp 25 juta"
          ],
-         highlight: "Dukungan Penuh hingga Keberangkatan"
+         highlight: "Pendampingan Penuh Sampai Berangkat"
       },
       sectors: {
-         title: "Industri Penempatan Utama",
-         sub: "Kami mengoordinasikan seleksi di sektor-sektor permintaan tinggi di Jepang.",
+         title: "Bidang Penempatan Kerja",
+         sub: "Kami bekerja sama dengan berbagai sektor industri di Jepang.",
          items: ["Pertanian", "Restoran", "Peternakan", "Keperawatan", "Pengolahan Makanan", "Manufaktur"]
       },
       apply: {
          title: "Cara Mendaftar",
          steps: [
-            "Isi formulir online atau daftar via kode QR.",
-            "Bayar biaya pendaftaran (IDR 500.000) untuk mengamankan slot.",
-            "Lengkapi MCU (Lokal) & Psikotes (Zoom).",
-            "Hadiri pelatihan & wawancara dengan mitra.",
-            "Selesaikan dokumen & berangkat ke Jepang!"
+            "Isi formulir pendaftaran online atau daftar via QR code.",
+            "Bayar biaya booking Rp 500.000 untuk mengamankan slot.",
+            "Ikuti MCU dan Psikotes (online via Zoom).",
+            "Jalani pelatihan 3 bulan & wawancara dengan perusahaan Jepang.",
+            "Lengkapi dokumen & berangkat ke Jepang!"
          ],
          form: {
-            title: "Pendaftaran Cepat",
+            title: "Form Pendaftaran",
             name: "Nama Lengkap",
             age: "Usia",
-            phone: "Telepon / WhatsApp",
+            phone: "No. WhatsApp",
             city: "Kota / Provinsi",
-            prog: "Pilih Minat Program",
-            submit: "Kirim Aplikasi",
-            note: "Setelah mengirim, tim penerimaan kami akan menghubungi Anda untuk verifikasi dokumen."
+            prog: "Pilih Program",
+            submit: "Kirim Pendaftaran",
+            note: "Setelah mengirim, tim kami akan menghubungimu untuk verifikasi data."
          }
       },
       faq: {
-         title: "Pertanyaan Umum",
+         title: "Pertanyaan yang Sering Ditanyakan",
          items: [
-             { q: "Apa level bahasa yang saya butuhkan?", a: "Untuk magang kami mengharapkan minimal N5; untuk Tokutei/SSW N4 / JFT A2 dan lulus ujian keterampilan relevan." },
-             { q: "Apakah saya butuh pengalaman kerja?", a: "Untuk jalur magang — tidak. Untuk TG/SSW Anda harus lulus tes keterampilan yang diperlukan." },
-             { q: "Bisakah Harukaze membantu biaya keberangkatan?", a: "Ya — Harukaze menawarkan atau mengatur pembiayaan/pinjaman jangka pendek (sekitar IDR 20–30 juta) untuk kandidat yang memenuhi syarat." },
-             { q: "Dimana lokasi Harukaze?", a: "Jl. Malaka gg. Masjid Almuctar, Munjul, Cipayung, Jakarta Timur, DKI Jakarta 13850." }
+             { q: "Berapa total biaya untuk program Magang?", a: "Total biaya pendidikan Rp 10.500.000 (dicicil 3 bulan). Sudah termasuk asrama 3 bulan, baju LPK & buku panduan. Biaya keberangkatan Rp 35-40 juta, dengan dana talang tersedia ± Rp 25 juta." },
+             { q: "Apakah butuh pengalaman kerja?", a: "Untuk program Magang tidak perlu pengalaman kerja. Untuk TG/SSW harus lulus ujian keterampilan sesuai bidang." },
+             { q: "Bagaimana skema pembayarannya?", a: "Booking awal Rp 500.000 (untuk MCU). Cicilan: Bulan 1 = Rp 5 juta, Bulan 2 = Rp 3 juta, Bulan 3 = Rp 2,5 juta. Setelah dapat job, siapkan ± Rp 15 juta untuk pemberkasan." },
+             { q: "Apakah ada dana talang?", a: "Ya! Dana talang keberangkatan tersedia ± Rp 25 juta untuk kandidat yang sudah mendapat penempatan kerja." },
+             { q: "Dimana lokasi Harukaze?", a: "Jl. Malaka Gg. Masjid Almuctar, Kelurahan Munjul, Kecamatan Cipayung, Jakarta Timur 13850." }
          ]
       },
       footer: {
-         ready: "Siap memulai?",
-         desc: "Harukaze Indonesia — nafas perubahan untuk masa depan Anda. Ubah hidup Anda melalui karir profesional di Jepang. Arigatou gozaimasu.",
-         chat: "Chat di WhatsApp",
+         ready: "Siap memulai perjalananmu?",
+         desc: "Harukaze Indonesia — angin perubahan untuk masa depanmu. Wujudkan impian bekerja di Jepang bersama kami. Arigatou gozaimasu!",
+         chat: "Chat WhatsApp",
          contact: "Hubungi Kami",
-         copy: "© 2026 Harukaze Indonesia. Hak cipta dilindungi.",
+         copy: "© 2026 Harukaze Indonesia. Semua hak dilindungi.",
          links: ["Kebijakan Privasi", "Syarat & Ketentuan"]
+      }
+    },
+    ja: {
+      nav: [
+        { name: 'プログラム', id: 'programs' },
+        { name: 'スケジュール', id: 'schedule' },
+        { name: '費用', id: 'fees' },
+        { name: 'よくある質問', id: 'faq' }
+      ],
+      applyButton: '今すぐ申し込む',
+      mobileMenuTitle: 'メニュー',
+      mobileMenuDesc: "Harukazeのページをご覧ください",
+      hero: {
+         headlineStart: "未来を変える",
+         headlineMiddle: "新しい風",
+         headlineEnd: "ここから始まる。",
+         desc: "日本語の集中トレーニング、文化研修、そして就職までの完全サポート。私たちと一緒に日本での夢を実現しましょう！",
+         cta: "プログラムを見る",
+         placementTitle: "就職先の業種：",
+         placements: ["農業", "飲食業", "畜産業", "介護", "食品加工", "製造業"]
+      },
+      about: {
+         label: "私たちについて",
+         headlinePrefix: "インドネシアの若者に",
+         headlineHighlight: "新しい可能性を",
+         imageQuote: "「若者がグローバルに活躍できる力を育みます。」",
+         tabs: { vision: "ビジョン", mission: "ミッション" },
+         vision: {
+             title: "私たちのビジョン",
+             text: "インドネシアの労働力に新しい風を届ける、信頼される研修機関を目指します。若者が経済的自立とグローバルな競争力を獲得できるよう支援します。"
+         },
+         mission: {
+             title: "私たちのミッション",
+             items: [
+                { title: "質の高い研修", desc: "文化・メンタル面の準備を含めた質の高い日本語研修を提供します。", icon: BookOpen },
+                { title: "失業率の削減", desc: "日本での信頼できる就業機会を通じて失業問題に取り組みます。", icon: TrendingUp },
+                { title: "コミュニティへの貢献", desc: "スキル・技術・資本の還元を通じてインドネシアのコミュニティを強化します。", icon: Users }
+             ]
+         }
+      },
+      programs: {
+         label: "プログラム紹介",
+         headline: "日本への道を選ぼう",
+         sub: "年齢、スキル、キャリア目標に合わせた体系的なプログラムをご用意しています。",
+         cards: [
+           {
+              icon: Users,
+              title: "技能実習プログラム",
+              label: "技能実習生",
+              whoFor: "対象者",
+              whoForDesc: "18〜26歳。N5レベル以上。新卒者歓迎。職務経験不要。",
+              features: "特徴",
+              featuresDesc: "3ヶ月のN5研修。寮完備。面接対策付き。制服・教材支給。",
+              footer: "初心者に最適なルート"
+           },
+           {
+              icon: Briefcase,
+              title: "特定技能（TG）",
+              label: "特定技能労働者",
+              whoFor: "対象者",
+              whoForDesc: "18〜33歳。N4 / JFT A2必須。特定技能試験合格者。",
+              features: "特徴",
+              featuresDesc: "6ヶ月研修。より高い給与。5〜10年ビザ取得可能。家族帯同可。",
+              footer: "長期キャリアに最適"
+           },
+           {
+              icon: FileText,
+              title: "SSW試験対策コース",
+              label: "試験準備",
+              whoFor: "対象者",
+              whoForDesc: "特定分野のSSW技術・語学試験合格を目指す方。",
+              features: "特徴",
+              featuresDesc: "試験対策重視。書類サポート。就職マッチング。",
+              footer: "資格取得に集中"
+           }
+         ]
+      },
+      eligibility: {
+         title: "応募資格",
+         sub: "申し込み前に基本要件を確認してください。",
+         items: [
+            { label: "年齢", value: "18〜26歳（技能実習）または33歳まで（TG/SSW）" },
+            { label: "語学力", value: "N5以上（技能実習）/ N4またはJFT A2（TG）" },
+            { label: "健康状態", value: "健康診断（MCU）合格必須" },
+            { label: "スキル", value: "技能実習は不要、SSW/TGは技能試験必須" }
+         ]
+      },
+      schedule: {
+         label: "スケジュール",
+         title: "第1期生スケジュール",
+         desc: "登録から出発までの明確なステップをご案内します。すべての段階でサポートいたします。",
+         button: "パンフレットをダウンロード",
+         steps: [
+            { title: "登録・事前審査", date: "2025年12月15日〜20日頃", desc: "申込受付、書類確認、適格審査、予約金支払い。" },
+            { title: "健康診断・適性検査", date: "2025年12月21日〜30日", desc: "総合健康診断とZoomによるオンライン適性検査。" },
+            { title: "研修期間", date: "2026年1月3日開始", desc: "技能実習3ヶ月（N5）。TG/SSW 6ヶ月（N4）。日本語・文化学習。" },
+            { title: "面接・マッチング", date: "研修期間中", desc: "研修中に日本企業パートナーとの面接を実施。" },
+            { title: "日本への出発", date: "内定後", desc: "ビザ申請、最終健康診断、出発前オリエンテーション、渡航。" }
+         ]
+      },
+      fees: {
+         badge: "明確で安心な料金体系",
+         title: "日本への第一歩を踏み出そう",
+         sub: "分割払い対応。渡航費用の立替制度あり！",
+         plans: [
+            { 
+               title: "技能実習プログラム", subtitle: "3ヶ月研修", discount: "第1期",
+               items: [{l:"予約金（MCU）",v:"Rp 500,000"}, {l:"1ヶ月目",v:"Rp 5,000,000"}, {l:"2ヶ月目",v:"Rp 3,000,000"}, {l:"3ヶ月目",v:"Rp 2,500,000"}],
+               note: "研修費用合計Rp 10,500,000（3ヶ月寮費、制服、教材込み）。地方からのMCUはRp 350,000キャッシュバック。"
+            },
+            {
+               title: "TG / SSWプログラム", subtitle: "6ヶ月研修", discount: "第1期",
+               items: [{l:"予約金（MCU）",v:"Rp 500,000"}, {l:"1ヶ月目",v:"Rp 5,000,000"}, {l:"2ヶ月目",v:"Rp 3,000,000"}, {l:"3ヶ月目",v:"Rp 1,500,000"}],
+               note: "渡航費用Rp 35〜40百万（ビザ、最終MCU、航空券等）。約Rp 25百万の立替制度あり。"
+            }
+         ],
+         disclaimer: "内定後、日本への手続き費用として約Rp 15百万をご準備ください。残額は立替制度利用可能。詳細はお問い合わせください。"
+      },
+      facilities: {
+         label: "施設・サポート",
+         title: "Harukazeを選ぶ理由",
+         items: [
+            "研修期間中はエアコン完備の教室と寮を提供",
+            "資格を持つ講師とネイティブスピーカーによる授業",
+            "N5 / N4教材、制服、学習資料を完備",
+            "日本語書類の翻訳サポート",
+            "渡航費用の立替制度（約Rp 25百万）"
+         ],
+         highlight: "出発までフルサポート"
+      },
+      sectors: {
+         title: "主な就職先業種",
+         sub: "日本の需要の高い業種への就職をコーディネートします。",
+         items: ["農業", "飲食業", "畜産業", "介護", "食品加工", "製造業"]
+      },
+      apply: {
+         title: "申し込み方法",
+         steps: [
+            "オンラインフォームまたはQRコードから登録。",
+            "予約金Rp 500,000を支払い、枠を確保。",
+            "健康診断と適性検査（Zoomオンライン）を受ける。",
+            "3ヶ月の研修と日本企業との面接に参加。",
+            "書類を完成させ、日本へ出発！"
+         ],
+         form: {
+            title: "簡単登録フォーム",
+            name: "氏名",
+            age: "年齢",
+            phone: "電話番号 / WhatsApp",
+            city: "都市 / 地域",
+            prog: "希望プログラムを選択",
+            submit: "申し込む",
+            note: "送信後、担当者より書類確認のご連絡をいたします。"
+         }
+      },
+      faq: {
+         title: "よくある質問",
+         items: [
+             { q: "技能実習プログラムの総費用はいくらですか？", a: "研修費用合計Rp 10,500,000（3ヶ月分割払い）。3ヶ月寮費、LPK制服、教材込み。渡航費用Rp 35〜40百万、約Rp 25百万の立替制度あり。" },
+             { q: "職務経験は必要ですか？", a: "技能実習プログラムは経験不要です。TG/SSWは分野別の技能試験合格が必要です。" },
+             { q: "支払い方法は？", a: "予約金Rp 500,000（MCU用）。分割：1ヶ月目Rp 5百万、2ヶ月目Rp 3百万、3ヶ月目Rp 2.5百万。内定後、手続き費用として約Rp 15百万が必要。" },
+             { q: "立替制度はありますか？", a: "はい！内定者には渡航費用の立替制度（約Rp 25百万）をご利用いただけます。" },
+             { q: "Harukazeの所在地は？", a: "Jl. Malaka Gg. Masjid Almuctar, Kelurahan Munjul, Kecamatan Cipayung, 東ジャカルタ 13850" }
+         ]
+      },
+      footer: {
+         ready: "日本への一歩を踏み出しませんか？",
+         desc: "Harukaze Indonesia — あなたの未来に新しい風を届けます。私たちと一緒に日本で働く夢を実現しましょう。ありがとうございます！",
+         chat: "WhatsAppで相談",
+         contact: "お問い合わせ",
+         copy: "© 2026 Harukaze Indonesia. All rights reserved.",
+         links: ["プライバシーポリシー", "利用規約"]
       }
     }
   };
@@ -632,8 +806,8 @@ Mohon informasi lebih lanjut. Terima kasih!`;
             <img src={logoImage} alt="Harukaze Indonesia" className="h-full w-auto object-contain" />
           </motion.div>
           
-          <div className="flex items-center gap-4 md:gap-8">
-            <nav className="hidden md:flex items-center gap-8">
+          <div className="flex items-center gap-4 lg:gap-8">
+            <nav className="hidden lg:flex items-center gap-8">
                {c.nav.map((item) => (
                  <button 
                   key={item.id} 
@@ -646,12 +820,12 @@ Mohon informasi lebih lanjut. Terima kasih!`;
             </nav>
 
             {/* Language Switcher Desktop */}
-            <div className="hidden md:flex items-center bg-slate-100 rounded-full p-1 relative">
+            <div className="hidden lg:flex items-center bg-slate-100 rounded-full p-1 relative">
                 <div 
                   className="absolute inset-y-1 bg-white rounded-full shadow-sm transition-all duration-300"
                   style={{ 
-                    left: lang === 'en' ? '4px' : '50%', 
-                    width: 'calc(50% - 4px)' 
+                    left: lang === 'en' ? '4px' : lang === 'id' ? 'calc(33.33% + 2px)' : 'calc(66.66% + 2px)', 
+                    width: 'calc(33.33% - 4px)' 
                   }}
                 />
                 <button 
@@ -666,9 +840,15 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                 >
                   ID
                 </button>
+                <button 
+                  onClick={() => setLang('ja')}
+                  className={`relative z-10 px-3 py-1 text-xs font-bold transition-colors ${lang === 'ja' ? 'text-slate-900' : 'text-slate-400 hover:text-slate-600'}`}
+                >
+                  JA
+                </button>
             </div>
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hidden md:block">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hidden lg:block">
               <Button 
                 className="bg-[#00A2FF] text-white rounded-full px-5 py-2 h-auto text-sm font-medium shadow-[0_4px_14px_0_rgba(0,162,255,0.39)] hover:shadow-[0_6px_20px_rgba(0,162,255,0.23)] hover:bg-[#0095eb] transition-all"
                 onClick={() => scrollToSection('apply')}
@@ -679,7 +859,7 @@ Mohon informasi lebih lanjut. Terima kasih!`;
 
             <Sheet>
               <SheetTrigger asChild>
-                <button className="md:hidden relative group p-2">
+                <button className="lg:hidden relative group p-2">
                   <div className="absolute inset-0 bg-blue-50 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
                   <Menu className="w-7 h-7 text-slate-700 relative z-10 group-hover:text-[#00A2FF] transition-colors" />
                 </button>
@@ -705,6 +885,13 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                         className={`text-sm font-bold tracking-wide transition-colors ${lang === 'id' ? 'text-[#00A2FF]' : 'text-slate-400'}`}
                       >
                         Indonesia
+                      </button>
+                      <span className="text-slate-300">/</span>
+                      <button 
+                        onClick={() => setLang('ja')}
+                        className={`text-sm font-bold tracking-wide transition-colors ${lang === 'ja' ? 'text-[#00A2FF]' : 'text-slate-400'}`}
+                      >
+                        日本語
                       </button>
                    </div>
 
